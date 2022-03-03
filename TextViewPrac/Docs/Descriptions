@@ -1,0 +1,30 @@
+
+NSTextStorage
+
+
+Summary
+
+The fundamental storage mechanism of TextKit that contains the text managed by the system.
+Declaration
+
+class NSTextStorage : NSMutableAttributedString
+
+Discussion
+
+NSTextStorage is a semi-concrete subclass of NSMutableAttributedString that adds behavior for managing a set of client NSLayoutManager objects. A text storage object notifies its layout managers of changes to its characters or attributes, which lets the layout managers redisplay the text as needed.
+You can access a text storage object from any thread of your app, but your app must guarantee access from only one thread at a time.
+In macOS, this class also defines properties for getting and setting scriptable attributes of NSTextStorage objects. Unless you’re dealing with scriptability, you shouldn’t access these properties directly. In particular, using the characters, words, or paragraphs properties is an inefficient way to manipulate the text storage, since accessing these properties involves the creation of many objects. Instead, use the text access methods defined by NSMutableAttributedString, NSAttributedString, NSMutableString, and NSString to perform character-level manipulation.
+
+
+
+UIFontDescriptior:
+A collection of attributes that describes a font.
+
+
+
+viewDidLayoutSubviews()
+is Called to notify the view controller that its view has just laid out its subviews.
+
+When the bounds change for a view controller's view, the view adjusts the positions of its subviews and then the system calls this method. However, this method being called does not indicate that the individual layouts of the view's subviews have been adjusted. Each subview is responsible for adjusting its own layout.
+
+Your view controller can override this method to make changes after the view lays out its subviews. The default implementation of this method does nothing.

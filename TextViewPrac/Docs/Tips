@@ -1,0 +1,8 @@
+
+difference between shouldBegin / didBegin
+
+A "shouldBegin" something allows you to say NO on the return value to prohibit the action.
+
+A "didBegin" something says it has just started to happen and you need to take whatever actions you need to do at that point in time.
+
+아마.. 주로 쓰게될 것들은 didBegin / didEnd 아닐까 싶다.. ?
